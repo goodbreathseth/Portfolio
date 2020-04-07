@@ -1,0 +1,21 @@
+[submodule "9th-east"]
+	path = 9th-east
+	url = https://github.com/goodbreathseth/9th-east.git
+[submodule "codenames"]
+	path = codenames
+	url = https://github.com/goodbreathseth/codenames.git
+[submodule "HW"]
+	path = HW
+	url = https://github.com/goodbreathseth/HW.git
+[submodule "lab-5-mongodb-goodbreathseth"]
+	path = lab-5-mongodb-goodbreathseth
+	url = https://github.com/BYUCS260/lab-5-mongodb-goodbreathseth.git
+[submodule "lab2-javascript-goodbreathseth"]
+	path = lab2-javascript-goodbreathseth
+	url = https://github.com/BYUCS260/lab2-javascript-goodbreathseth.git
+[submodule "vue-creative-project"]
+	path = vue-creative-project
+	url = https://github.com/goodbreathseth/vue-creative-project.git
+[submodule "whack"]
+	path = whack
+	url = https://github.com/goodbreathseth/whack.git
