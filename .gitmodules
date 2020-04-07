@@ -16,3 +16,6 @@
 [submodule "whack"]
 	path = whack
 	url = https://github.com/goodbreathseth/whack.git
+[submodule "codenames"]
+	path = codenames
+	url = https://github.com/goodbreathseth/codenames.git
