@@ -1,9 +1,6 @@
 [submodule "9th-east"]
 	path = 9th-east
 	url = https://github.com/goodbreathseth/9th-east.git
-[submodule "codenames"]
-	path = codenames
-	url = https://github.com/goodbreathseth/codenames.git
 [submodule "HW"]
 	path = HW
 	url = https://github.com/goodbreathseth/HW.git
