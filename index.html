@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seth Hinton</title>
+    <link rel="stylesheet" href="portfolio/styles/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="text-center font-thin">
+    <div id="homePage" ref="parent" class="w-full h-full relative">
+
+        
+        <!-- This provides the background color -->
+            <div class="flex h-full p-12 absolute left-0 right-0 mx-auto zPosition transition-all ease-in duration-500" :style="height">
+                <div class="bg-green-400 w-1/2">&nbsp;</div>
+                <div class="bg-gray-200 w-1/2">&nbsp;</div>
+            </div>
+
+        
+        <transition name="slideUp">
+                <!-- This is where all text will be displayed -->
+                <div ref="contentHeight" v-if="loaded" class="pt-56 pb-24">
+                    <div class="w-3/4 mx-auto gradientBlur text-white pb-6">
+                        <h1 class="text-8xl textShadow">Seth Hinton</h1>
+                        <p>Software Developer & Musician</p>
+                    </div>
+    
+                    <div class="mt-24 text-2xl">
+                        <button @click="showWebsites = !showWebsites; showGithub = false" class="mr-8 bg-transparent hover:bg-white text-white hover:text-green-400 py-2 w-56 border border-white hover:border-transparent">Live Websites</button>
+                        <button @click="showGithub = !showGithub; showWebsites = false" class="ml-8 bg-transparent hover:bg-gray-800 text-black hover:text-white py-2 w-56 border border-gray-800 hover:border-transparent">GitHub Projects</button>
+                    </div> 
+
+                    <!-- For when 'Live Websites' is clicked -->
+                    <transition name="slideUp">
+                        <div v-if="showWebsites" class="w-2/3 mx-auto pt-56">
+                            <a :href="goToSite(':4204')" id="websitePics">
+                                <div class="blur shadow-2xl rounded">
+                                    <h2 class="pl-8 text-white text-6xl">Codenames</h2>
+                                    <img class="p-4" src="https://lh3.googleusercontent.com/IdXGndumozJjEAF_O0-SvJj5LAMiuNXHhY2CXYVd6d2gUK7hbQKTq7EcSZsLjASkc7tCtolx7R3EdVTcZewIE8OYDmhh3jUyD6HYiYZThzdkAhaaHxil-tw2T1oNtTJMInhyHVmajiUqRxzBDwvBmcQhIHXxTmvIGw7gGC-AyhiNs05Qg9nxCHUJJToYB-NyeUPJTecVAywBp-GkwIdGeK-FNQslRC571rFfT-3goUzVB5Hu5ynCmjMQBbD6CXgKTmzxTsuPWTvwfKG1UqspHQy6hG_yTd58IVYeFv2nM1h2BDYLeK7nZj1lj9kCKVhqAzJVObSieRoPlwRIETgVnMHvptmhP-QHzzWSjm0IvfF_fQNq89GEy-dpSNQv2cJJ1GUr6mDab3Y8_mP3nm1OCQH9SWeHl2hU4vN5gdOuVChyOXI7FoyzC-t4UBoLm6t9pXW2dsZOVW8UxXqVntiNlTgcynRp-PJekPNWYbgpLIYX5sYpOFKJTeOyEKTTSOFiWXLdqavcePeGy1_fnWqvhdpS6Ht6KobTLrxvvbY7AC9yiv2deAYxSeFhV-DomWeK-SKJLFh9m4e7oxk2mF0ocelMSNnJbxSpsyaeaLApAmBrpaUb2UwQ6uqn1fRbPab7xg2sISXCSsjEY7nxTs3CFkjL48ppa1Cse3DLHyzsA38q4vf3qvegjQ=w1920-h944-no" alt="Codenames">
+                                </div>
+                            </a>
+                            
+                            <a :href="goToSite('/9th-east')">
+                                <div id="9theast" class="blur rounded shadow-2xl mt-32">
+                                    <h2 class="pl-8 text-white text-6xl ">9th East Music</h2>
+                                    <img class="p-4" src="https://lh3.googleusercontent.com/U1O_lmEBpo4h6-T29FahBq-x1ClQPVc5ABxZBDRWt1887GpGfIlppmcQKTS26CzRIRMS6xlvC-CpQ9307dQ6vgGOKEnF_lRGwSkQk0UbbMyelWrnxXx_PU9Uly8WM02qWpIckKGOS8wCwAn4n7_dCamia7UMI7MO-JHJlHTqJnlDyb_FKreu87NF3EUSBF4tUWn-po7RbYmWCIjkWtRpchgkxxjHDbbspg8vinaX58jKfSYlEO0aGv8hezh7rmEmDBU29Eyw36TgI0GlsgiDB5rLaqm8by48bv4zSPPtr7TcLQzUJrDyH36uGtdaDDB3XxoQW3nPnEIIHsr9JULohCWw-nvWUdl0MfQxHomFkmW8doyutZbSWF6tYoSd0CMOOJ2zBTAZmf1peieYtGeqNWnO6VFbUoxz9_voK6ftQtbGfH29UK5F7rNw2k1aiAyU1RqsYFoLWMjUNWSWbv6HqjmFUS6qZ_B0fvTxbxoZtv-2WcAd4VTs-xZ-UaoeM0o2H-h0qk4mGaIs-qpAtoZCa1kym70Km9PdRfyRolwAa6Sv8rZex-tA5GNJ6n_TUjNto7eIvVGtAmqSQgE_BDLosJT1TuGoIB0Bxa7SUf9c8S_CkO0uhd5nCyZX_A9hkirnZkD2x-H8iuqyXrOw_w7XM0KeE4y2W2CFVx491mQYqky6A0EFCsjxPg=w1676-h907-no" alt="9th East Music">
+                                </div>
+                            </a>
+                            
+                            <a :href="goToSite('/whack/gameScreen.html')">
+                                <div class="blur rounded shadow-2xl mt-32">
+                                    <h2 class="pl-8 text-white text-6xl">Whack-a-Mole</h2>
+                                    <img class="mx-auto p-4" src="https://lh3.googleusercontent.com/Pfz4733Y0Gg5qQ8O0yfT2fi76tZICz6m55yC7lHz6Jw47TJVUwQl7SEB5XfUAQ8IBWJmyJWL49HwfD4_1vJZ0LKXoK6PN5sFvwv7TYesPoW_8e6QRRVhS91N6qWkxAFhCUzJPZDfvhjlb7a2zg-7be12L3NAmMYOfZzUdM-AKdVTG_ZhimjTzaIrQbIzKd70cUMIufpVNeRSPhuKWWpuCbuTTC-lbj4Lct7fMypAd1j7Ar0l6GhcmMWP0Ck1oS5TTxxQWUMcJZpktSKfACM_BC27H7dAmZRClrn0A7bH2sPqkrB5vDOCuvAS9V5ZStorOeyGQezQ5-aS0rGSid3QiFEfYhG_CzLcx9PWBgfwloXGqdRNVfGP_EUMCy0N9SzQXtVXuShTvl6NbltuyBTX5E36i5pLurwoYQ8OQOLzXflxD_8muy_OhRpq2mkWWmk05VPOWpckv4VtlLgyOKz51TqDirSnsUDVMDvqBxNpyTCZ43LlC6nw-WoluiBZPq_TRs4XTmY9gXUtlGKhtX8hewrWpkh9-UMStInrNxAbqpCUaYOR72knbR9dVP5jG7612zK32EMVvD3CldyScbLeMffj9t7MlnC-JnV6gS8B3qnbZvaAsMOVw_F1wEzwHGnIyhG44EBeXGDjnbUD7qrSwaaSiAybBAsEurQXVIpEOg6oy7G1s228pw=w372-h668-no" alt="Whack-a-Mole">
+                                </div>
+                            </a>
+                        </div>
+                    </transition>
+
+
+                    <!-- For when 'GitHub Projects' is clicked -->
+                    <transition name="slideUp">
+                        <div v-if="showGithub" class="w-2/3 mx-auto text-left pt-56">
+                            
+                            <div class="blur text-white rounded shadow-2xl my-12">
+                                <h2 class="pl-10 text-6xl">C</h2>
+                                <hr class="border-b border-gray-200 mx-10">
+                                <p class="py-2 text-3xl pl-24 hover:underline hover:text-blue-300"><a href="https://github.com/goodbreathseth/aes">Advanced Encryption / Decryption System (AES)</a></p>
+                                <p class="pb-2 text-3xl pl-24 hover:underline hover:text-blue-300"><a href="https://github.com/goodbreathseth/CS324-proxy-lab-3">Thread-Driven HTTP Proxy Server</a></p>
+                                <p class="pb-2 text-3xl pl-24 hover:underline hover:text-blue-300"><a href="https://github.com/goodbreathseth/CS324-lab-1">Custom Command Shell</a></p>
+                                <p id="githubLinks" class="pb-2 text-3xl pl-24 hover:underline hover:text-blue-300"><a href="https://github.com/goodbreathseth/CS324-lab-2">Domain Name System (DNS) Resolver</a></p>
+                            </div>
+                            
+                            <div class="blur text-white rounded shadow-2xl my-12">
+                                <h2 class="pl-10 text-6xl">C++</h2>
+                                <hr class="border-b border-gray-200 mx-10">
+                                <p class="py-2 text-3xl pl-24 hover:underline hover:text-blue-300"><a href="https://github.com/goodbreathseth/datalog">Datalog Program (Database, Parser, Interpreter)</a></p>
+                            </div>
+
+                            <div class="blur text-white rounded shadow-2xl my-12">
+                                <h2 class="pl-10 text-6xl">Python</h2>
+                                <hr class="border-b border-gray-200 mx-10">
+                                <p class="py-2 text-3xl pl-24 hover:underline hover:text-blue-300"><a href="https://github.com/goodbreathseth/hashAttack">Secure Hash Algorithm (SHA-1) Cracker</a></p>
+                                <p class="pb-2 text-3xl pl-24 hover:underline hover:text-blue-300"><a href="https://github.com/goodbreathseth/convexHull">Convex Hull Solver</a></p>
+                            </div>
+
+                            <div class="blur text-white rounded shadow-2xl my-12">
+                                <h2 class="pl-10 text-6xl">Java</h2>
+                                <hr class="border-b border-gray-200 mx-10">
+                                <p class="py-2 text-3xl pl-24 hover:underline hover:text-blue-300"><a href="https://github.com/goodbreathseth/imageEditor">Photo Editor</a></p>
+                                <p class="pb-2 text-3xl pl-24 hover:underline hover:text-blue-300"><a href="https://github.com/goodbreathseth/spellChecker">Spell Checker / Word Prompter</a></p>
+                                <p class="pb-2 text-3xl pl-24 hover:underline hover:text-blue-300"><a href="https://github.com/goodbreathseth/evilHangman">Hangman (Computer Cheats to Win)</a></p>
+                            </div>
+                            
+                            <div class="blur text-white rounded shadow-2xl my-8">
+                                <h2 class="pl-10 text-6xl">Android</h2>
+                                <hr class="border-b border-gray-200 mx-10">
+                                <p class="py-2 text-3xl pl-24 hover:underline hover:text-blue-300"><a href="https://github.com/goodbreathseth/ticketToRide">Ticket to Ride Game</a></p>
+                                <p class="pb-2 text-3xl pl-24 hover:underline hover:text-blue-300"><a href="https://github.com/goodbreathseth/ancestryApp">Ancestry Logger / Map Locator</a></p>
+                            </div>
+                        </div>
+                    </transition>
+
+                    
+        
+                    
+                </div>
+            </transition>
+            
+            
+            
+
+
+
+
+    </div>
+    <script src="/portfolio/script.js"></script>
+</body>
+</html>
