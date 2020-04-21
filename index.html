@@ -9,27 +9,26 @@
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="text-center font-thin">
-    <div id="homePage" ref="parent" class="w-full h-full relative">
-
-        
-        <!-- This provides the background color -->
-            <div class="flex h-full p-12 absolute left-0 right-0 mx-auto zPosition transition-all ease-in duration-500" :style="height">
-                <div class="bg-green-400 w-1/2">&nbsp;</div>
-                <div class="bg-gray-200 w-1/2">&nbsp;</div>
-            </div>
-
-        
+    <div id="homePage" ref="parent" class="w-full h-full">
         <transition name="slideUp">
-                <!-- This is where all text will be displayed -->
-                <div ref="contentHeight" v-if="loaded" class="pt-56 pb-24">
-                    <div class="w-3/4 mx-auto gradientBlur text-white pb-6">
+            <div ref="contentHeight" v-if="loaded" class="relative pt-20 sm:pt-56 sm:pb-48" style="min-height:100%">
+                <!-- This provides the background color -->
+                <div class="flex absolute sm:p-12 top-0 bottom-0 left-0 right-0 mx-auto transition-all ease-in duration-500" style="z-index: -1;">
+                    <div class="bg-green-400 w-1/2">&nbsp;</div>
+                    <div class="bg-gray-300 w-1/2">&nbsp;</div>
+                </div>
+                
+                
+                    <!-- This is where all text will be displayed -->
+                    <div class="text-left sm:text-center w-3/4 mx-auto text-white pb-6">
                         <h1 class="text-8xl textShadow">Seth Hinton</h1>
-                        <p>Software Developer & Musician</p>
+                        <p>Software Developer</p>
+                        <p>& Musician</p>
                     </div>
     
-                    <div class="mt-24 text-2xl">
-                        <button @click="showWebsites = !showWebsites; showGithub = false" class="mr-8 bg-transparent hover:bg-white text-white hover:text-green-400 py-2 w-56 border border-white hover:border-transparent">Live Websites</button>
-                        <button @click="showGithub = !showGithub; showWebsites = false" class="ml-8 bg-transparent hover:bg-gray-800 text-black hover:text-white py-2 w-56 border border-gray-800 hover:border-transparent">GitHub Projects</button>
+                    <div class="mt-16 sm:mt-24 text-2xl">
+                        <button @click="showWebsites = !showWebsites; showGithub = false" class="mb-4 sm:mb-0 sm:mr-8 bg-transparent hover:bg-white text-white hover:text-green-400 py-3 w-3/4 sm:w-56 border border-white hover:border-transparent">Live Websites</button>
+                        <button @click="showGithub = !showGithub; showWebsites = false" class="sm:ml-8 bg-transparent hover:bg-gray-800 text-black hover:text-white py-3 w-3/4 sm:w-56 border border-gray-800 hover:border-transparent">GitHub Projects</button>
                     </div> 
 
                     <!-- For when 'Live Websites' is clicked -->
@@ -101,20 +100,9 @@
                             </div>
                         </div>
                     </transition>
-
-                    
-        
-                    
                 </div>
             </transition>
-            
-            
-            
-
-
-
-
     </div>
-    <script src="/portfolio/script.js"></script>
+    <script src="portfolio/script.js"></script>
 </body>
 </html>
